@@ -9,7 +9,7 @@ def remove_duplicates(sequence):
 
     return result  # Return the list containing unique items
 
-#  print output
+#  print output results
 print(remove_duplicates([1, 2, 2, 3, 4, 4, 5])) 
 print(remove_duplicates([5, 4, 3, 2, 1]))  
 print(remove_duplicates(['a', 'b', 'a', 'c', 'b', 'd'])) 
