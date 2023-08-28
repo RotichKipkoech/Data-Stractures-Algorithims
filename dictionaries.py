@@ -1,15 +1,23 @@
-def remove_duplicates(sequence):
-    seen = set()  # Initialize an empty set to keep track of seen items
-    result = []    # Initialize an empty list to store unique items
+def word_frequency(sentence):
+    # Define a string containing punctuation characters
+    punctuation_chars = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
-    for item in sequence:  # Iterate through each item in the input sequence
-        if item not in seen:  # Check if the item is not already seen
-            seen.add(item)     # Add the item to the set of seen items
-            result.append(item)  # Append the item to the result list
+    # Convert the sentence to lowercase and remove punctuation
+    translator = str.maketrans("", "", punctuation_chars)
+    cleaned_sentence = sentence.translate(translator).lower()
 
-    return result  # Return the list containing unique items
+    # Split the cleaned sentence into words
+    words = cleaned_sentence.split()
 
-#  print output
-print(remove_duplicates([1, 2, 2, 3, 4, 4, 5])) 
-print(remove_duplicates([5, 4, 3, 2, 1]))  
-print(remove_duplicates(['a', 'b', 'a', 'c', 'b', 'd'])) 
+    frequency = {}
+    for word in words:
+        if word in frequency:
+            frequency[word] += 1
+        else:
+            frequency[word] = 1
+
+    return frequency
+
+# Test case
+sentence = "The quick brown fox jumps over the lazy dog. The dog barks, and the fox runs."
+print(word_frequency(sentence))

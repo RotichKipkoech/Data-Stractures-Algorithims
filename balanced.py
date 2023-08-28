@@ -17,7 +17,7 @@ def is_balanced(expression):
     # After processing all characters, check if there are any unmatched opening brackets left
     return len(stack) == 0  # If the stack is empty, the expression is balanced
 
-# Test cases
+# Output
 print(is_balanced("()"))  # True
 print(is_balanced("()[]{}"))  # True
 print(is_balanced("(]"))  # False
